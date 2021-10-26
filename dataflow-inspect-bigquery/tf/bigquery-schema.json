@@ -1,92 +1,77 @@
 [
   {
-    "description": "card_type_full_name",
-    "mode": "NULLABLE",
-    "name": "card_type_full_name",
-    "type": "STRING"
+    "name": "ID",
+    "type": "STRING",
+    "mode": "REQUIRED"
   },
   {
-    "description": "issuing_bank",
-    "mode": "NULLABLE",
-    "name": "issuing_bank",
-    "type": "STRING"
+    "name": "Card_Type_Code",
+    "type": "STRING",
+    "mode": "REQUIRED"
   },
   {
-    "description": "card_number",
-    "mode": "NULLABLE",
-    "name": "card_number",
-    "type": "STRING"
+    "name": "Card_Type_Full_Name",
+    "type": "STRING",
+    "mode": "REQUIRED"
   },
   {
-    "description": "card_holders_name ",
-    "mode": "NULLABLE",
-    "name": "card_holders_name",
-    "type": "STRING"
+    "name": "Issuing_Bank",
+    "type": "STRING",
+    "mode": "REQUIRED"
   },
   {
-    "description": "cvvcvv2 ",
-    "mode": "NULLABLE",
-    "name": "cvvcvv2",
-    "type": "STRING"
+    "name": "Card_Number",
+    "type": "STRING",
+    "mode": "REQUIRED"
   },
   {
-    "description": "issue_date",
-    "mode": "NULLABLE",
-    "name": "issue_date",
-    "type": "STRING"
+    "name": "Card_Holder_Name",
+    "type": "STRING",
+    "mode": "REQUIRED"
   },
   {
-    "description": "expiry_date",
-    "mode": "NULLABLE",
-    "name": "expiry_date",
-    "type": "STRING"
+    "name": "Issue_Date",
+    "type": "STRING",
+    "mode": "REQUIRED"
   },
   {
-    "description": "billing_date",
-    "mode": "NULLABLE",
-    "name": "billing_date",
-    "type": "STRING"
+    "name": "Expiry_Date",
+    "type": "STRING",
+    "mode": "REQUIRED"
   },
   {
-    "description": "card_pin",
-    "mode": "NULLABLE",
-    "name": "card_pin",
-    "type": "STRING"
+    "name": "Billing_Date",
+    "type": "STRING",
+    "mode": "REQUIRED"
   },
   {
-    "description": "credit_limit",
-    "mode": "NULLABLE",
-    "name": "credit_limit",
-    "type": "STRING"
+    "name": "Card_PIN",
+    "type": "STRING",
+    "mode": "REQUIRED"
   },
   {
-    "description": "card_type_code",
-    "mode": "NULLABLE",
-    "name": "card_type_code",
-    "type": "STRING"
+    "name": "Credit_Limit",
+    "type": "STRING",
+    "mode": "REQUIRED"
   },
   {
-    "description": "age",
-    "mode": "NULLABLE",
-    "name": "age",
-    "type": "STRING"
+    "name": "Age",
+    "type": "STRING",
+    "mode": "REQUIRED"
   },
   {
-    "description": "social_security_number",
-    "mode": "NULLABLE",
-    "name": "social_security_number",
-    "type": "STRING"
+    "name": "SSN",
+    "type": "STRING",
+    "mode": "REQUIRED"
   },
   {
-    "description": "job_title",
-    "mode": "NULLABLE",
-    "name": "job_title",
-    "type": "STRING"
+    "name": "Job_Title",
+    "type": "STRING",
+    "mode": "REQUIRED"
   },
   {
-    "description": "additional_information",
-    "mode": "NULLABLE",
-    "name": "additional_information",
-    "type": "STRING"
+    "name": "Additional_Details",
+    "type": "STRING",
+    "mode": "REQUIRED"
   }
 ]

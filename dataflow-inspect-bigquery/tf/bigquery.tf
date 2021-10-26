@@ -28,7 +28,7 @@ resource "google_bigquery_data_transfer_config" "dummy_sensitive_data" {
     file_format                     = "CSV"
     max_bad_records                 = 0
     skip_leading_rows               = 1
-    write_disposition               = "APPEND"
+    write_disposition               = "MIRROR"
   }
   schedule_options {
     disable_auto_scheduling = true
