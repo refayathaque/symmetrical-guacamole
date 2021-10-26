@@ -19,7 +19,7 @@ output "bigquery_table_id" {
 resource "google_bigquery_data_transfer_config" "dummy_sensitive_data" {
   data_source_id         = "google_cloud_storage"
   destination_dataset_id = google_bigquery_dataset.dummy_sensitive_data.dataset_id
-  display_name           = "dummy-sensitive-data-from-storage"
+  display_name           = "dummy-sensitive-data"
   location               = var.region
   params = {
     data_path_template              = "${google_storage_bucket.dummy_sensitive_data.url}/${google_storage_bucket_object.dummy_sensitive_data.output_name}"
