@@ -17,3 +17,11 @@
   ```
 - Create tf iam resources for bigquery to access the dummy sensitive data in storage and do the transfer
   - "When you load data into BigQuery, you need permissions that allow you to load data into new or existing BigQuery tables and partitions. If you are loading data from Cloud Storage, you'll also need access to the bucket that contains your [data."](https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#required_permissions)
+- Create a [maven project](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html#creating-a-project) for the dataflow template image
+  - `mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false`
+    - [Archetypes](https://maven.apache.org/guides/introduction/introduction-to-archetypes.html)
+    - "groupId uniquely identifies your project across all projects. A group ID should follow Java's package name rules. This means it starts with a reversed domain name you control. For example, com.mycompany.app, org.apache.maven, [org.apache.commons"](https://maven.apache.org/guides/mini/guide-naming-conventions.html#guide-to-naming-conventions-on-groupid-artifactid-and-version)
+    - "artifactId is the name of the jar without version. If you created it, then you can choose whatever name you want with lowercase letters and no strange symbols. If it's a third party jar, you have to take the name of the jar as it's distributed eg. my-app, maven, commons-math"
+    - [Maven Getting Started Guide](https://maven.apache.org/guides/getting-started/)
+  - Test the project by building with `mvn package`, then run `java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App` - "Hello World!" will get logged
+  - [Install](https://cloud.google.com/dataflow/docs/guides/installing-beam-sdk) the Apache Beam SDK, test that the dependencies were added properly by running `mvn package`
