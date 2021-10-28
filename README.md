@@ -25,8 +25,29 @@
     - [Maven Getting Started Guide](https://maven.apache.org/guides/getting-started/)
   - Test the project by building with `mvn package`, then run `java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App` - "Hello World!" will get logged
   - [Install](https://cloud.google.com/dataflow/docs/guides/installing-beam-sdk) the Apache Beam SDK, test that the dependencies were added properly by running `mvn package`
-- Code the `App.java`, and create tf resources (if necessary), using the following as references/guides:
+- Create and build the dataflow flex template image with the main class being `App.java`, and create tf resources (if necessary), using the following as references/guides:
   - GCP flex template [docs](https://cloud.google.com/dataflow/docs/guides/templates/using-flex-templates#example-metadata-file)
     - Java [code](https://github.com/GoogleCloudPlatform/java-docs-samples/blob/main/dataflow/flex-templates/streaming_beam_sql/src/main/java/org/apache/beam/samples/StreamingBeamSql.java)
   - Apache beam programming [guide](https://beam.apache.org/documentation/programming-guide/)
     - Google BigQuery I/O [connector](https://beam.apache.org/documentation/io/built-in/google-bigquery/)
+    - Using the Google Cloud Dataflow [Runner](https://beam.apache.org/documentation/runners/dataflow/)
+- Create template spec file
+  - To run a template, you need to create a template spec file in a Cloud Storage containing all of the necessary information to run the job, such as the SDK information and [metadata.](https://cloud.google.com/dataflow/docs/guides/templates/using-flex-templates#creating_a_flex_template)
+- Building and running the flex template created in the steps above locally
+  - Build
+    ```
+    gcloud dataflow flex-template build $TEMPLATE_PATH \
+      --image-gcr-path "gcr.io/$PROJECT/dataflow-inspect-bigquery:latest" \
+      --sdk-language "JAVA" \
+      --flex-template-base-image JAVA11 \
+      --jar "target/dataflow-inspect-bigquery-1.0.jar" \
+      --env FLEX_TEMPLATE_JAVA_MAIN_CLASS="com.mycompany.app.App"
+    ```
+  - Run
+  ```
+  gcloud dataflow flex-template run "dataflow-inspect-bigquery-`date +%Y%m%d-%H%M%S`" \
+    --template-file-gcs-location "$TEMPLATE_PATH" \
+    --parameters input="$PROJECT:dummy_sensitive_data.dummy_sensitive_data" \
+    --parameters output="$PROJECT:dataflow_inspect_bigquery_output.dataflow_inspect_bigquery_output" \
+    --region "us-east4"
+  ```

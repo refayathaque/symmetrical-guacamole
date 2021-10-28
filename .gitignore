@@ -2,3 +2,4 @@ vars.tf
 .terraform*
 terraform*
 target*
+.DS_Store
