@@ -25,3 +25,8 @@
     - [Maven Getting Started Guide](https://maven.apache.org/guides/getting-started/)
   - Test the project by building with `mvn package`, then run `java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App` - "Hello World!" will get logged
   - [Install](https://cloud.google.com/dataflow/docs/guides/installing-beam-sdk) the Apache Beam SDK, test that the dependencies were added properly by running `mvn package`
+- Code the `App.java`, and create tf resources (if necessary), using the following as references/guides:
+  - GCP flex template [docs](https://cloud.google.com/dataflow/docs/guides/templates/using-flex-templates#example-metadata-file)
+    - Java [code](https://github.com/GoogleCloudPlatform/java-docs-samples/blob/main/dataflow/flex-templates/streaming_beam_sql/src/main/java/org/apache/beam/samples/StreamingBeamSql.java)
+  - Apache beam programming [guide](https://beam.apache.org/documentation/programming-guide/)
+    - Google BigQuery I/O [connector](https://beam.apache.org/documentation/io/built-in/google-bigquery/)
