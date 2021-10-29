@@ -44,10 +44,10 @@
       --env FLEX_TEMPLATE_JAVA_MAIN_CLASS="com.mycompany.app.App"
     ```
   - [Run](https://cloud.google.com/dataflow/docs/guides/templates/using-flex-templates#running_a_flex_template_pipeline)
-  ```
-  gcloud dataflow flex-template run "dataflow-inspect-bigquery-`date +%Y%m%d-%H%M%S`" \
-    --template-file-gcs-location "$TEMPLATE_PATH" \
-    --parameters input="$PROJECT:dummy_sensitive_data.dummy_sensitive_data" \
-    --parameters output="$PROJECT:dataflow_inspect_bigquery_output.dataflow_inspect_bigquery_output" \
-    --region "us-east4"
-  ```
+    ```
+    gcloud dataflow flex-template run "dataflow-inspect-bigquery-`date +%Y%m%d-%H%M%S`" \
+      --template-file-gcs-location "$TEMPLATE_PATH" \
+      --parameters input="$PROJECT:dummy_sensitive_data.dummy_sensitive_data" \
+      --parameters output="$PROJECT:dataflow_inspect_bigquery_output.dataflow_inspect_bigquery_output" \
+      --region "us-east4"
+    ```
