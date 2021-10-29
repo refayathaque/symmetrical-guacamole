@@ -1,0 +1,19 @@
+{
+  "name": "dataflow-inspect-bigquery",
+  "description": "An Apache Beam streaming pipeline that reads data from a BigQuery table, uses Beam SQL to transform the data, and writes the results to a BigQuery",
+  "parameters": [
+    {
+      "name": "input",
+      "label": "BigQuery input table",
+      "helpText": "BigQuery table spec to read from, in the form 'project:dataset.table'.",
+      "regexes": ["[^:]+:[^.]+[.].+"]
+    },
+    {
+      "name": "output",
+      "label": "BigQuery output table",
+      "helpText": "BigQuery table spec to write to, in the form 'project:dataset.table'.",
+      "isOptional": false,
+      "regexes": ["[^:]+:[^.]+[.].+"]
+    }
+  ]
+}
