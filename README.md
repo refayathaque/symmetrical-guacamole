@@ -9,7 +9,7 @@
 - Create tf resources for bigquery dataset, table and data transfer, also create bigquery schema json file ✔️
   - The `data_path_template` argument in `google_bigquery_data_transfer_config` resource should follow the format `gs://<bucket_url>/<object_name>` which you can get with [interpolation](https://www.terraform.io/docs/language/expressions/strings.html#interpolation) `${google_storage_bucket.<bucket_resource_name>.url}/${google_storage_bucket_object.<object_resource_name>.output_name}`
   - You'll have to manually invoke the transfer after tf is done provisioning the resource
-    - If you want to automate this you can, look at arguments like `schedule` in the tf [docs](Cp7&g[(RF:zPEH`2)
+    - If you want to automate this you can, look at arguments like `schedule` in the tf [docs](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/bigquery_data_transfer_config#example-usage---bigquerydatatransfer-config-scheduled-query)
   - **Problem:** If you try to run the data transfer more than once (from the point of inception) it won't work and the log will say that it can't find the object - Workaround was setting the `write_disposition` tf argument in the `params` block to `"MIRROR"` - This has to be set from the beginning (when creating the `google_bigquery_data_transfer_config`) because it's immutable, you'll get an error like this:
   ```
   Immutable parameter write_disposition with value string_value: "APPEND"
@@ -34,7 +34,7 @@
   - To run a template, you need to create a template spec file in a Cloud Storage containing all of the necessary information to run the job, such as the SDK information and [metadata.](https://cloud.google.com/dataflow/docs/guides/templates/using-flex-templates#creating_a_flex_template)
 - Building and running the flex template created in the steps above
   - Build the `.jar` file by running `mvn package` (good chance this has already been done)
-  - Build (modified from 'Build the Flex Template' in link above)
+  - Build (modified from 'Build the Flex Template' in link above) - ✔️
     ```
     gcloud dataflow flex-template build gs://dataflow-inspect-bigquery/template-spec.json \
       --image-gcr-path "gcr.io/$PROJECT/dataflow-inspect-bigquery:latest" \
