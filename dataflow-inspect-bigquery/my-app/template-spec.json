@@ -1,4 +1,5 @@
 {
+  "image":"gcr.io/wbtg63wxu/dataflow-inspect-bigquery:latest",
   "name": "dataflow-inspect-bigquery",
   "description": "An Apache Beam streaming pipeline that reads data from a BigQuery table, uses Beam SQL to transform the data, and writes the results to a BigQuery",
   "parameters": [

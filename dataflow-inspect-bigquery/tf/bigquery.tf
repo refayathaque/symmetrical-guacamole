@@ -12,7 +12,7 @@ resource "google_bigquery_table" "dummy_sensitive_data" {
   # required regular expression: ^([A-z0-9_$]*|{([A-z0-9\"%+\-|\\\.;])+})*$ No dashes.
 }
 
-output "bigquery_table_id" {
+output "bigquery_dummy_sensitive_data_table_id" {
   value = google_bigquery_table.dummy_sensitive_data.id
 }
 
@@ -37,3 +37,18 @@ resource "google_bigquery_data_transfer_config" "dummy_sensitive_data" {
 
 # https://github.com/batect/updates.batect.dev/blob/fc5666360296907a18999b0cbf5535ef32ae5419/infra/event_table/transfer.tf
 # https://github.com/ashwini2206soni/bigquery_data_transfer/blob/719d0df6679d0d2f1656435a7d16a575aff41143/terraform/main.tf
+
+resource "google_bigquery_dataset" "dataflow_inspect_bigquery_output" {
+  dataset_id = "dataflow_inspect_bigquery_output"
+  location   = var.region
+}
+
+resource "google_bigquery_table" "dataflow_inspect_bigquery_output" {
+  dataset_id          = google_bigquery_dataset.dataflow_inspect_bigquery_output.dataset_id
+  deletion_protection = false
+  table_id            = "dataflow_inspect_bigquery_output"
+}
+
+output "bigquery_dataflow_inspect_bigquery_output_table_id" {
+  value = google_bigquery_table.dataflow_inspect_bigquery_output.id
+}
