@@ -38,7 +38,7 @@
 - Create output bigquery dataset and table
 - Building and running the flex template created in the steps above
   - Build the `.jar` file by running `mvn package` (good chance this has already been done)
-  - Build (modified from 'Build the Flex Template' in link above) - ✔️
+  - Build (modified from 'Build the Flex Template' in link above) - Run this from the `my-app` dir ✔️
     ```
     gcloud dataflow flex-template build gs://dataflow-inspect-bigquery/template-spec.json \
       --image-gcr-path "gcr.io/$PROJECT/dataflow-inspect-bigquery:latest" \
