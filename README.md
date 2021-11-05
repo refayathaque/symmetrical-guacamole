@@ -55,3 +55,9 @@
       --parameters output="$PROJECT:dataflow_inspect_bigquery_output.dataflow_inspect_bigquery_output" \
       --region "us-east4"
     ```
+
+### Dataflow job to "bulk-decompress-cloud-storage-files"
+
+- Will use [GCP provided simple template](https://cloud.google.com/dataflow/docs/guides/templates/provided-utilities#bulk-decompress-cloud-storage-files) for testing
+- Remember to add project argument to all resources
+- Putting storage objects [within folders/directories in buckets](https://stackoverflow.com/a/55525770)
